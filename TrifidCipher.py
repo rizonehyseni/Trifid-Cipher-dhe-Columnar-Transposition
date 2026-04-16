@@ -27,3 +27,11 @@ class TrifidCipher:
         text = text.replace(" ", "+")
         return ''.join(c for c in text if c in self.letter_to_coord)
 
+    def encrypt(self, plaintext):
+        text = self._prepare_text(plaintext)
+        if not text:
+            return ""
+    
+        coords = [self.letter_to_coord[c] for c in text]
+        result = []
+

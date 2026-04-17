@@ -12,3 +12,10 @@ def encrypt(self, plaintext):
     padding = key_len - (len(plaintext) % key_len)
     plaintext += self.filler * padding
 
+
+    grid = [
+        plaintext[i:i + key_len]
+        for i in range(0, len(plaintext), key_len)
+    ]
+
+

@@ -43,3 +43,9 @@ def decrypt(self, ciphertext):
 grid = [[''] * key_len for _ in range(num_rows)]
 idx = 0
 
+for col_idx in self.col_order:
+            for row in range(num_rows):
+                grid[row][col_idx] = ciphertext[idx]
+                idx += 1
+
+        plaintext = ''

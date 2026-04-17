@@ -49,3 +49,5 @@ for col_idx in self.col_order:
                 idx += 1
 
         plaintext = ''
+for row in range(num_rows):
+            plaintext += ''.join(grid[row])

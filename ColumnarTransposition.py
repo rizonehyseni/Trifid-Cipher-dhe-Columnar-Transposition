@@ -40,5 +40,6 @@ def decrypt(self, ciphertext):
         key_len = len(self.key)
         num_rows = len(ciphertext) // key_len
 
-        
+grid = [[''] * key_len for _ in range(num_rows)]
+idx = 0
 

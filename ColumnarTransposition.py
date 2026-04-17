@@ -3,4 +3,7 @@ class ColumnarTranspositionCipher:
         self.key = key.upper().replace(" ", "")
         self.filler = filler.upper()
 
-plaintext = ''.join(c for c in plaintext.upper() if c.isalpha())
+
+def encrypt(self, plaintext):
+    plaintext = ''.join(c for c in plaintext.upper() if c.isalpha())
+

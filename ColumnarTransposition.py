@@ -7,3 +7,5 @@ class ColumnarTranspositionCipher:
 def encrypt(self, plaintext):
     plaintext = ''.join(c for c in plaintext.upper() if c.isalpha())
 
+
+    key_len = len(self.key)

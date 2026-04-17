@@ -24,3 +24,6 @@ def encrypt(self, plaintext):
         for row in grid:
             ciphertext += row[col]
 
+    return ciphertext
+        
+

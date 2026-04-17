@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+# Trifid-Cypher-dhe-Columnar-Transposition
+
+Key: Trimethoprimumsulfamethoxazolum
+=======
 # Projekti: Trifid Cipher & Columnar Transposition Cipher
 
 ##  Përshkrimi i projektit
@@ -48,3 +53,4 @@ dhe për Trifid Cipher:
 ```bash
 python TrifidCipher.py
 ```
+>>>>>>> 44c513783f7da02a3cf6882aa68c58e4f830c0a1

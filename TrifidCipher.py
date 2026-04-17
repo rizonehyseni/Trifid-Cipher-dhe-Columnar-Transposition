@@ -31,17 +31,22 @@ class TrifidCipher:
         text = self._prepare_text(plaintext)
         if not text:
             return ""
-    
+
         coords = [self.letter_to_coord[c] for c in text]
         result = []
 
-    
-    for i in range(0, len(coords), self.period):
-        group = coords[i:i + self.period]
-        n = len(group)
+        for i in range(0, len(coords), self.period):
+            group = coords[i:i + self.period]
+            n = len(group)
 
-        layers = [c[0] for c in group]
-        rows   = [c[1] for c in group]
-        cols   = [c[2] for c in group]
+            layers = [c[0] for c in group]
+            rows   = [c[1] for c in group]
+            cols   = [c[2] for c in group]
 
-        combined = layers + rows + cols
+            combined = layers + rows + cols
+
+            for j in range(0, 3 * n, 3):
+                triplet = (combined[j], combined[j+1], combined[j+2])
+                result.append(self.coord_to_letter[triplet])
+
+        return ''.join(result)

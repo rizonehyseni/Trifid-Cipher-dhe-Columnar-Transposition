@@ -9,3 +9,6 @@ def encrypt(self, plaintext):
 
 
     key_len = len(self.key)
+    padding = key_len - (len(plaintext) % key_len)
+    plaintext += self.filler * padding
+

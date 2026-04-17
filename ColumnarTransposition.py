@@ -30,5 +30,15 @@ def encrypt(self, plaintext):
             ciphertext += row[col]
 
     return ciphertext
+
+def decrypt(self, ciphertext):
+        ciphertext = ''.join(c for c in ciphertext.upper() if c.isalpha() or c == self.filler)
+        
+        if not ciphertext:
+            return ""
+
+        key_len = len(self.key)
+        num_rows = len(ciphertext) // key_len
+
         
 

@@ -18,4 +18,9 @@ def encrypt(self, plaintext):
         for i in range(0, len(plaintext), key_len)
     ]
 
+    ciphertext = ''
+
+    for col in col_order:
+        for row in grid:
+            ciphertext += row[col]
 

@@ -1,8 +1,3 @@
-
-# Trifid-Cypher-dhe-Columnar-Transposition
-
-Key: Trimethoprimumsulfamethoxazolum
-=======
 # Projekti: Trifid Cipher & Columnar Transposition Cipher
 
 ##  Përshkrimi i projektit
@@ -38,7 +33,6 @@ Trifid Cipher është një algoritëm kriptografik që përdor:
 
 ### Alfabeti i përdorur:
 ABCDEFGHIJKLMNOPQRSTUVWXYZ+
-
 
 
 ##  Si të ekzekutohet projekti

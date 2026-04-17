@@ -35,3 +35,13 @@ class TrifidCipher:
         coords = [self.letter_to_coord[c] for c in text]
         result = []
 
+    
+    for i in range(0, len(coords), self.period):
+        group = coords[i:i + self.period]
+        n = len(group)
+
+        layers = [c[0] for c in group]
+        rows   = [c[1] for c in group]
+        cols   = [c[2] for c in group]
+
+        combined = layers + rows + cols

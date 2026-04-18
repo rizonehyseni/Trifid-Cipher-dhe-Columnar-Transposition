@@ -18,10 +18,7 @@ def encrypt(self, plaintext):
         plaintext += self.filler * padding
 
 
-    grid = [
-        plaintext[i:i + key_len]
-        for i in range(0, len(plaintext), key_len)
-    ]
+    grid = [plaintext[i:i + key_len]for i in range(0, len(plaintext), key_len)]
 
     ciphertext = ''
 
@@ -40,10 +37,10 @@ def decrypt(self, ciphertext):
         key_len = len(self.key)
         num_rows = len(ciphertext) // key_len
 
-grid = [[''] * key_len for _ in range(num_rows)]
-idx = 0
+        grid = [[''] * key_len for _ in range(num_rows)]
+        idx = 0
 
-for col_idx in self.col_order:
+        for col_idx in self.col_order:
             for row in range(num_rows):
                 grid[row][col_idx] = ciphertext[idx]
                 idx += 1
@@ -51,11 +48,14 @@ for col_idx in self.col_order:
         plaintext = ''
         for row in range(num_rows):
             plaintext += ''.join(grid[row])
-              plaintext = plaintext.rstrip(self.filler)
+        
+        plaintext = plaintext.rstrip(self.filler)
         return plaintext
-    if __name__ == "__main__":
+
+if __name__ == "__main__":
     key = "Trimethoprimumsulfamethoxazolum"
-     cipher = ColumnarTranspositionCipher(key, filler='X')
+
+    cipher = ColumnarTranspositionCipher(key, filler='X')
     
     plaintext = "aide toi le ciel t aidera"
     

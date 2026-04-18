@@ -30,5 +30,41 @@ def encrypt(self, plaintext):
             ciphertext += row[col]
 
     return ciphertext
-        
 
+def decrypt(self, ciphertext):
+        ciphertext = ''.join(c for c in ciphertext.upper() if c.isalpha() or c == self.filler)
+        
+        if not ciphertext:
+            return ""
+
+        key_len = len(self.key)
+        num_rows = len(ciphertext) // key_len
+
+grid = [[''] * key_len for _ in range(num_rows)]
+idx = 0
+
+for col_idx in self.col_order:
+            for row in range(num_rows):
+                grid[row][col_idx] = ciphertext[idx]
+                idx += 1
+
+        plaintext = ''
+        for row in range(num_rows):
+            plaintext += ''.join(grid[row])
+              plaintext = plaintext.rstrip(self.filler)
+        return plaintext
+    if __name__ == "__main__":
+    key = "Trimethoprimumsulfamethoxazolum"
+     cipher = ColumnarTranspositionCipher(key, filler='X')
+    
+    plaintext = "aide toi le ciel t aidera"
+    
+    encrypted = cipher.encrypt(plaintext)
+    decrypted = cipher.decrypt(encrypted)
+    
+    print("Çelësi                :", key)
+    print("Gjatësia e çelësit    :", len(cipher.key), "kolona")
+    print("Plaintext             :", plaintext)
+    print("Encrypted             :", encrypted)
+    print("Decrypted             :", decrypted)
+    print("Dekriptimi u kthye saktë?", plaintext.upper().replace(" ", "") == decrypted)

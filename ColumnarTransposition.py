@@ -51,3 +51,5 @@ for col_idx in self.col_order:
         plaintext = ''
 for row in range(num_rows):
             plaintext += ''.join(grid[row])
+              plaintext = plaintext.rstrip(self.filler)
+        return plaintext

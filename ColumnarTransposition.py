@@ -53,3 +53,6 @@ for row in range(num_rows):
             plaintext += ''.join(grid[row])
               plaintext = plaintext.rstrip(self.filler)
         return plaintext
+    if __name__ == "__main__":
+    key = "Trimethoprimumsulfamethoxazolum"
+    

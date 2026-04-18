@@ -49,10 +49,22 @@ for col_idx in self.col_order:
                 idx += 1
 
         plaintext = ''
-for row in range(num_rows):
+        for row in range(num_rows):
             plaintext += ''.join(grid[row])
               plaintext = plaintext.rstrip(self.filler)
         return plaintext
     if __name__ == "__main__":
     key = "Trimethoprimumsulfamethoxazolum"
+     cipher = ColumnarTranspositionCipher(key, filler='X')
     
+    plaintext = "aide toi le ciel t aidera"
+    
+    encrypted = cipher.encrypt(plaintext)
+    decrypted = cipher.decrypt(encrypted)
+    
+    print("Çelësi                :", key)
+    print("Gjatësia e çelësit    :", len(cipher.key), "kolona")
+    print("Plaintext             :", plaintext)
+    print("Encrypted             :", encrypted)
+    print("Decrypted             :", decrypted)
+    print("Dekriptimi u kthye saktë?", plaintext.upper().replace(" ", "") == decrypted)

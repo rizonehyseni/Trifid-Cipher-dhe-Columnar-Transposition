@@ -21,13 +21,13 @@ Qëllimi kryesor i projektit është të kuptohet:
 
 ---
 ## Struktura e projektit
-``
+```
 Trifid-Cipher-dhe-Columnar-Transposition/
 │
 ├── ColumnarTransposition.py
 ├── TrifidCipher.py
 └── README.md
-``
+```
 
 
 ##  Columnar Transposition Cipher

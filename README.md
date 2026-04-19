@@ -6,12 +6,29 @@ Ky projekt është zhvilluar për lëndën **Siguria e të dhënave**.
 
 Qëllimi është implementimi i dy algoritmeve klasike të enkriptimit:
 
-- Trifid Cipher
-- Columnar Transposition Cipher
+Në këtë projekt janë implementuar dy algoritme klasike:
 
+- **Trifid Cipher**, i cili kombinon zëvendësimin dhe transpozimin duke përdorur një strukturë tredimensionale (3D cube)
+- **Columnar Transposition Cipher**, i cili bazohet në riorganizimin e karaktereve sipas një çelësi të caktuar
+  
 Të dy algoritmet përdoren për enkriptimin dhe dekriptimin e teksteve duke përdorur metoda të kriptografisë klasike.
 
+Qëllimi kryesor i projektit është të kuptohet:
+- Si funksionojnë algoritmet bazë të enkriptimit
+- Si transformohet informacioni në mënyrë të sigurt
+- Dallimi midis metodave të ndryshme të kriptografisë klasike
+- Zbatimi praktik i koncepteve teorike në programim me Python
+
 ---
+## Struktura e projektit
+``
+Trifid-Cipher-dhe-Columnar-Transposition/
+│
+├── ColumnarTransposition.py
+├── TrifidCipher.py
+└── README.md
+``
+
 
 ##  Columnar Transposition Cipher
 

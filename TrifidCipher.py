@@ -50,3 +50,45 @@ class TrifidCipher:
                 result.append(self.coord_to_letter[triplet])
 
         return ''.join(result)
+
+    def decrypt(self, ciphertext):
+        text = self._prepare_text(ciphertext)
+        if not text:
+            return ""
+
+        coords = [self.letter_to_coord[c] for c in text]
+        result = []
+
+        for i in range(0, len(coords), self.period):
+            group = coords[i:i + self.period]
+            n = len(group)
+
+            flat = []
+            for c in group:
+                flat.extend(c)
+
+            pos = 0
+            for _ in range(n):
+                layer = flat[pos]
+                row   = flat[pos + n]
+                col   = flat[pos + 2 * n]
+
+                triplet = (layer, row, col)
+                result.append(self.coord_to_letter[triplet])
+                pos += 1
+
+        return ''.join(result).replace("+", " ")
+
+
+if __name__ == "__main__":
+    cipher = TrifidCipher(period=5)
+
+    plaintext = "HELLO WORLD"
+
+    encrypted = cipher.encrypt(plaintext)
+    decrypted = cipher.decrypt(encrypted)
+
+    print("Plaintext :", plaintext)
+    print("Encrypted :", encrypted)
+    print("Decrypted :", decrypted)
+    print("Alphabet  :", cipher.alphabet)
